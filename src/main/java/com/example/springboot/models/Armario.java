@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Armario extends RepresentationModel<Armario> implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private GuardaVolume fkGuardaVolume;
     private Cliente fkCliente;

@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class Usuario extends RepresentationModel<Usuario> implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String txtNome;
     private String txtEmail;

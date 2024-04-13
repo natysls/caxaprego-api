@@ -1,8 +1,8 @@
 package com.example.springboot.controller;
 
-import com.example.springboot.dtos.ArmarioDto;
-import com.example.springboot.models.Armario;
-import com.example.springboot.repositories.ArmarioRepository;
+import com.example.springboot.dtos.GuardaVolumeDto;
+import com.example.springboot.models.GuardaVolume;
+import com.example.springboot.repositories.GuardaVolumeRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,60 +18,59 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
-public class ArmarioController {
+public class GuardaVolumeController {
 
     @Autowired
-    ArmarioRepository armarioRepository;
+    GuardaVolumeRepository guardaVolumeRepository;
 
-    @PostMapping("/armarios")
-    public ResponseEntity<Armario> save(@RequestBody @Valid ArmarioDto dto){
-        var obj = new Armario();
+    @PostMapping("/guarda-volumes")
+    public ResponseEntity<GuardaVolume> save(@RequestBody @Valid GuardaVolumeDto dto){
+        var obj = new GuardaVolume();
         BeanUtils.copyProperties(dto, obj);
-        return ResponseEntity.status(HttpStatus.CREATED).body(armarioRepository.save(obj));
+        return ResponseEntity.status(HttpStatus.CREATED).body(guardaVolumeRepository.save(obj));
     }
 
-    @GetMapping("/armarios")
-    public ResponseEntity<List<Armario>> getAll(){
-        List<Armario> list = armarioRepository.findAll();
+    @GetMapping("/guarda-volumes")
+    public ResponseEntity<List<GuardaVolume>> getAll(){
+        List<GuardaVolume> list = guardaVolumeRepository.findAll();
         if(!list.isEmpty()){
-            for(Armario obj: list){
+            for(GuardaVolume obj: list){
                 UUID id = obj.getId();
-                obj.add(linkTo(methodOn(ArmarioController.class).getOne(id)).withSelfRel());
+                obj.add(linkTo(methodOn(GuardaVolumeController.class).getOne(id)).withSelfRel());
 
             }
         }
         return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 
-    @GetMapping("/armarios/{id}")
+    @GetMapping("/guarda-volumes/{id}")
     public ResponseEntity<Object> getOne(@PathVariable(value = "id") UUID id){
-        Optional<Armario> op = armarioRepository.findById(id);
+        Optional<GuardaVolume> op = guardaVolumeRepository.findById(id);
         if(op.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
-        op.get().add(linkTo(methodOn(ArmarioController.class).getAll()).withRel("Product List"));
+        op.get().add(linkTo(methodOn(GuardaVolumeController.class).getAll()).withRel("Product List"));
         return ResponseEntity.status(HttpStatus.OK).body(op.get());
     }
 
-    @PutMapping("/armarios/{id}")
-    public ResponseEntity<Object> update(@PathVariable(value = "id") UUID id, @RequestBody @Valid ArmarioDto dto){
-        Optional<Armario> op = armarioRepository.findById(id);
+    @PutMapping("/guarda-volumes/{id}")
+    public ResponseEntity<Object> update(@PathVariable(value = "id") UUID id, @RequestBody @Valid GuardaVolumeDto dto){
+        Optional<GuardaVolume> op = guardaVolumeRepository.findById(id);
         if(op.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
         var obj = op.get();
         BeanUtils.copyProperties(dto, obj);
-        return ResponseEntity.status(HttpStatus.OK).body(armarioRepository.save(obj));
+        return ResponseEntity.status(HttpStatus.OK).body(guardaVolumeRepository.save(obj));
     }
 
-    @DeleteMapping("/armarios/{id}")
+    @DeleteMapping("/guarda-volumes/{id}")
     public ResponseEntity<Object> delete(@PathVariable(value = "id") UUID id){
-        Optional<Armario> op = armarioRepository.findById(id);
+        Optional<GuardaVolume> op = guardaVolumeRepository.findById(id);
         if(op.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
-        armarioRepository.delete(op.get());
+        guardaVolumeRepository.delete(op.get());
         return ResponseEntity.status(HttpStatus.OK).body("Product deleted successfully.");
     }
-
 }

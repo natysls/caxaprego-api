@@ -10,7 +10,7 @@ import java.util.UUID;
 @Table(name="tb_cliente")
 public class Cliente extends RepresentationModel<Cliente> implements Serializable  {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private Usuario fkUsuario;
 
