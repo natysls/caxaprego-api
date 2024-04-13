@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "5aa4b684-d79d-499b-a9c3-5883f8286cee",
+		"name": "API Caxaprego",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34250247"
+	},
+	"item": [
+		{
+			"name": "Get All Guarda Volumes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/armarios"
+			},
+			"response": []
+		},
+		{
+			"name": "Post One Guarda Volume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nmLocal\": \"Rua Silas Munguba\",\r\n    \"numArmarios\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/guarda-volumes"
+			},
+			"response": []
+		},
+		{
+			"name": "Post One Armario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nmLocal\": \"Rua Silas Munguba\",\r\n    \"numArmarios\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/armarios"
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Guarda Volume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/products/fd381cdf-f839-4569-b8d2-0f7efc5b7458"
+			},
+			"response": []
+		},
+		{
+			"name": "Uptade One Guarda Volume",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lavadora LG\",\r\n    \"value\": 2600.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/products/fd381cdf-f839-4569-b8d2-0f7efc5b7458"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete one Guarda Volume",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{host}}/products/9e62dd06-024b-41cf-961a-7d06f96c9a74"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
