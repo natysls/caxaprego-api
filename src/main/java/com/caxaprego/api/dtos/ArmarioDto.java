@@ -1,7 +1,7 @@
-package com.example.springboot.dtos;
+package com.caxaprego.api.dtos;
 
-import com.example.springboot.models.Cliente;
-import com.example.springboot.models.GuardaVolume;
+import com.caxaprego.api.models.Cliente;
+import com.caxaprego.api.models.GuardaVolume;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;

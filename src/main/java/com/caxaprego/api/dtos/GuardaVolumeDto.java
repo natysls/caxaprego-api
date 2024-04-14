@@ -1,4 +1,4 @@
-package com.example.springboot.dtos;
+package com.caxaprego.api.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

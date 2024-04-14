@@ -1,8 +1,8 @@
-package com.example.springboot.controller;
+package com.caxaprego.api.controller;
 
-import com.example.springboot.dtos.ArmarioDto;
-import com.example.springboot.models.Armario;
-import com.example.springboot.repositories.ArmarioRepository;
+import com.caxaprego.api.repositories.ArmarioRepository;
+import com.caxaprego.api.dtos.ArmarioDto;
+import com.caxaprego.api.models.Armario;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

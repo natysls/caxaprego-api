@@ -1,4 +1,4 @@
-package com.example.springboot.models;
+package com.caxaprego.api.models;
 
 import jakarta.persistence.*;
 import org.springframework.hateoas.RepresentationModel;

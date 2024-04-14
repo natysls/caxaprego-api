@@ -1,4 +1,4 @@
-package com.example.springboot.models;
+package com.caxaprego.api.models;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

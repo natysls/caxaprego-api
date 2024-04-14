@@ -1,8 +1,8 @@
-package com.example.springboot.controller;
+package com.caxaprego.api.controller;
 
-import com.example.springboot.dtos.GuardaVolumeDto;
-import com.example.springboot.models.GuardaVolume;
-import com.example.springboot.repositories.GuardaVolumeRepository;
+import com.caxaprego.api.dtos.GuardaVolumeDto;
+import com.caxaprego.api.models.GuardaVolume;
+import com.caxaprego.api.repositories.GuardaVolumeRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

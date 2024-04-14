@@ -1,6 +1,6 @@
-package com.example.springboot.repositories;
+package com.caxaprego.api.repositories;
 
-import com.example.springboot.models.GuardaVolume;
+import com.caxaprego.api.models.GuardaVolume;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
